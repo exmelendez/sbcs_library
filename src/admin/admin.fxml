@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminController">
+   <children>
+      <TabPane layoutX="-4.0" layoutY="-4.0" prefHeight="724.0" prefWidth="1283.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Books">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="572.0" prefWidth="1187.0">
+                     <children>
+                        <HBox layoutX="221.0" layoutY="-1.0" prefHeight="693.0" prefWidth="1061.0">
+                           <children>
+                              <TableView fx:id="booktable" prefHeight="693.0" prefWidth="1061.0">
+                                <columns>
+                                  <TableColumn fx:id="bookIDCol" prefWidth="75.0" text="BOOK ID" />
+                                  <TableColumn fx:id="bookTitleCol" prefWidth="173.71688842773438" text="TITLE" />
+                                    <TableColumn fx:id="bookAuthorCol" prefWidth="128.28311157226562" text="AUTHOR" />
+                                    <TableColumn fx:id="bookISBNCol" prefWidth="137.22286987304688" text="ISBN" />
+                                    <TableColumn fx:id="bookGenreCol" prefWidth="154.52484130859375" text="GENRE" />
+                                    <TableColumn fx:id="bookPriceCol" prefWidth="86.32574462890625" text="PRICE" />
+                                    <TableColumn fx:id="bookSGradeCol" prefWidth="95.67425537109375" text="START GRADE" />
+                                    <TableColumn fx:id="bookEGradeCol" prefWidth="83.0814208984375" text="END GRADE" />
+                                    <TableColumn fx:id="bookStatusCol" prefWidth="120.30963134765625" text="DIST. STATUS" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="3.0" layoutY="1.0" prefHeight="690.0" prefWidth="219.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="201.0" text="ADD BOOK" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="15.0" top="7.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="book_id" promptText="Book ID">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="book_title" layoutX="10.0" layoutY="27.0" promptText="Title">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="book_author" layoutX="10.0" layoutY="27.0" promptText="Author">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="book_isbn" layoutX="10.0" layoutY="54.0" promptText="ISBN">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="book_genre" layoutX="10.0" layoutY="81.0" promptText="Genre">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="book_price" layoutX="10.0" layoutY="108.0" promptText="Price">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <ComboBox fx:id="book_start_grade" prefHeight="27.0" prefWidth="188.0" promptText="Start Grade">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="book_end_grade" layoutX="25.0" layoutY="189.0" prefHeight="27.0" prefWidth="188.0" promptText="End Grade">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="book_status" layoutX="10.0" layoutY="216.0" prefHeight="27.0" prefWidth="188.0" promptText="Distribution Status">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Button defaultButton="true" mnemonicParsing="false" onAction="#addBook" prefHeight="27.0" prefWidth="187.0" text="ADD ENTRY">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Arial" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="374.0" mnemonicParsing="false" onAction="#loadBookData" prefHeight="27.0" prefWidth="185.0" text="REFRESH">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Teachers">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="193.0" layoutY="1.0" prefHeight="690.0" prefWidth="1090.0">
+                           <children>
+                              <TableView fx:id="teachertable" prefHeight="690.0" prefWidth="1088.0">
+                                <columns>
+                                  <TableColumn fx:id="teacherIDCol" prefWidth="47.32240295410156" text="ID" />
+                                  <TableColumn fx:id="teacherFNameCol" prefWidth="171.28883361816406" text="FIRST NAME" />
+                                    <TableColumn fx:id="teacherLNameCol" prefWidth="142.71115112304688" text="LAST NAME" />
+                                    <TableColumn fx:id="teacherEmailCol" prefWidth="188.844482421875" text="EMAIL" />
+                                    <TableColumn fx:id="teacherPasswordCol" prefWidth="111.177978515625" text="PASSWORD" />
+                                    <TableColumn fx:id="teacherGradeCol" prefWidth="73.9112548828125" text="GRADE" />
+                                    <TableColumn fx:id="teacherClassCol" prefWidth="75.9556884765625" text="CLASS" />
+                                    <TableColumn fx:id="teacherRoomCol" prefWidth="68.04461669921875" text="ROOM" />
+                                    <TableColumn fx:id="teacherExpCol" prefWidth="95.86669921875" text="EXPIRATION" />
+                                    <TableColumn fx:id="teacherLastUpdateCol" prefWidth="111.0889892578125" text="LAST UPDATE" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="695.0" prefWidth="194.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="182.0" text="ADD TEACHER" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" top="9.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="teacher_id" promptText="ID">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="4.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="teacher_fname" layoutX="20.0" layoutY="41.0" promptText="First Name">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="4.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="teacher_lname" layoutX="10.0" layoutY="68.0" promptText="Last Name">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="4.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="teacher_email" layoutX="10.0" layoutY="95.0" promptText="Email">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="4.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField layoutX="20.0" layoutY="137.0" promptText="Password">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="4.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <ComboBox fx:id="teacher_grade" prefHeight="27.0" prefWidth="196.0" promptText="Grade">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="4.0" top="5.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="teacher_class" layoutX="10.0" layoutY="196.0" prefHeight="27.0" prefWidth="210.0" promptText="Class">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="4.0" top="5.0" />
+                                     
+                                 </VBox.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="teacher_room" layoutX="10.0" layoutY="223.0" prefHeight="27.0" prefWidth="218.0" promptText="Room">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="4.0" top="5.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <DatePicker fx:id="teacher_expdate" promptText="Expiration Date">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="4.0" top="5.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <Button defaultButton="true" mnemonicParsing="false" onAction="#addBook" prefHeight="27.0" prefWidth="187.0" text="ADD ENTRY">
+                                 <font>
+                                    <Font name="Arial" size="13.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="13.0" right="7.0" top="25.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#loadBookData" prefHeight="27.0" prefWidth="185.0" text="REFRESH">
+                                 <VBox.margin>
+                                    <Insets left="13.0" right="7.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Students">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Configuration">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
